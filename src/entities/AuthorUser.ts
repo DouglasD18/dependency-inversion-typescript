@@ -9,7 +9,7 @@ export class AuthorUser extends User {
     this.validatePassword(password);
   }
 
-  private validatePassword(password: string) {
+  protected validatePassword(password: string) {
     if (password.length < AuthorUser.MIN_PASSWORD_LENGTH) {
       throw new Error("INVALID_PASSWORD_LENGTH");
     }

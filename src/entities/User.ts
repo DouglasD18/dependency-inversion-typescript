@@ -18,6 +18,8 @@ export abstract class User {
     this.role = role;
   }
 
+  protected abstract validatePassword(password: string): void;
+
   private validateEmail(email: string) {
     const isValid = User.EMAIL_REGER.test(email);
 
