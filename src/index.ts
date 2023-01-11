@@ -2,6 +2,7 @@ import express from "express";
 import { CreateUserControllerFactory } from './factories/CreateUserControllerFactory';
 
 const app = express();
+app.use(express.json());
 
 const createUserController = CreateUserControllerFactory.make();
 
