@@ -8,4 +8,4 @@ const createUserController = CreateUserControllerFactory.make();
 
 app.post('/user', (req, res) => createUserController.handle(req, res));
 
-app.listen(3000);
+app.listen(3000, () => console.log("Is running!"));
