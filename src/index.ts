@@ -1,12 +1,10 @@
 import express from "express";
-import { CreateUserController } from "./controller/CreateUserController";
-import { CreateUserService } from "./services/CreateUserService";
+import { CreateUserControllerFactory } from './factories/CreateUserControllerFactory';
 
 const app = express();
 
-const service = new CreateUserService();
-const controller = new CreateUserController(service);
+const createUserController = CreateUserControllerFactory.make();
 
-app.post('/user', (req, res) => controller.handle(req, res));
+app.post('/user', (req, res) => createUserController.handle(req, res));
 
 app.listen(3000);
