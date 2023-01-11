@@ -1,6 +1,7 @@
 import { AuthorUser } from '../entities/AuthorUser';
 import { AdminUser } from '../entities/AdminUser';
 import { Role, User } from '../entities/User';
+import { ValidationError } from '../errors/ValidationError';
 
 export interface CreateUserRepository {
   create(user: User): Promise<{id: number}>;
@@ -24,6 +25,6 @@ export class CreateUserService {
       return new AdminUser(email, password);
     } 
     
-    throw new Error("INVALID_ROLE");
+    throw new ValidationError("INVALID_ROLE");
   }
 }

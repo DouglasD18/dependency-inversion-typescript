@@ -1,3 +1,5 @@
+import { ValidationError } from "../errors/ValidationError";
+
 export enum Role {
   author = 'author',
   admin = 'admin'
@@ -24,7 +26,7 @@ export abstract class User {
     const isValid = User.EMAIL_REGER.test(email);
 
     if (!isValid) {
-      throw new Error("INVALID_EMAIL");
+      throw new ValidationError("INVALID_EMAIL");
     }
   }
 }

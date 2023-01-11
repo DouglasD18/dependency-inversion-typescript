@@ -1,3 +1,4 @@
+import { ValidationError } from "../errors/ValidationError";
 import { Role, User } from "./User";
 
 export class AdminUser extends User {
@@ -11,7 +12,7 @@ export class AdminUser extends User {
 
   protected validatePassword(password: string) {
     if (password.length < AdminUser.MIN_PASSWORD_LENGTH) {
-      throw new Error("INVALID_PASSWORD_LENGTH");
+      throw new ValidationError("INVALID_PASSWORD_LENGTH");
     }
   }
 }
