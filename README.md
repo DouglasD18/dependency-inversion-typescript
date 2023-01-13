@@ -1,7 +1,7 @@
-# Fullstack Cashforce
+# Dependency Inversion at TypeScript
 
 # Contexto
-API em NodeJs, TypeScript e Express para estudar e praticar o conceiro de herança e inversão de dependências nessa stack.
+API em NodeJs, TypeScript e Express para estudar e praticar os conceitos de herança e inversão de dependências nessa stack.
 
 ## Técnologias usadas
 
